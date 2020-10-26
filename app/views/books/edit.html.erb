@@ -1,20 +1,32 @@
-<h2><strong>New book</strong></h2>
-<!-- form_with部分 -->
-<%= form_with model:@book, local:true do |f| %>
-  <% if @book.errors.any? %>
-    <h3><%= @book.errors.count %> errors detected.</h3>
-    <ul>
-      <% @book.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  <% end %>
+<div class='row'>
+  <div class='col-md-6 col-md-offset-3'>
+	  <h1>Editing Book</h1>
 
-  <div class="heading">Title</div>
-  <div class="indextitle"><%= f.text_field :title %></div>
+  <%= form_with model:@book, local:true do |f| %>
+    <% if @book.errors.any? %>
+      <h3><%= @book.errors.count %> errors detected.</h3>
+      <ul>
+        <% @book.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
 
-  <div class="heading">Body</div>
-  <div class="indextitle"><%= f.text_area :body %></div>
-  <%= f.submit %>
+    <div class="heading">Title</div>
+    <div class="indextitle"><%= f.text_field :title %></div>
+
+    <div class="heading">Opinion</div>
+    <div class="indextitle"><%= f.text_area :body %></div>
+
+    <div class="submit">
+      <input type="submit" name="commit" value="Update Book" class="btn btn-primary col-xs-12" data-disable-with="Update Book" />
+    </div>
+
+  </form>
+
+  <%= link_to "Show", book_path(@book) %> |
+	<a class="back" href="/books">Back</a>
+  </div>
+</div>
 
 <% end %>

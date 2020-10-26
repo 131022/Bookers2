@@ -1,0 +1,26 @@
+<div class='useredit'>
+  <h1>User info</h1>
+
+  <%= form_with model:@user, local:true do |f| %>
+    <% if @user.errors.any? %>
+      <h3><%= @user.errors.count %> errors detected.</h3>
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <div class="heading"><strong>Name</strong></div>
+    <div class="indextitle"><%= f.text_field :name %></div>
+    <div class="heading"><strong>Image</strong></div>
+    <%= f.attachment_field :profile_image %>
+    <div class="heading"><strong>Introduction</strong></div>
+    <div class="indextitle"><%= f.text_area :introduction %></div>
+
+    <%= f.submit %>
+
+  </form>
+ </div>
+
+<% end %>

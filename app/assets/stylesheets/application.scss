@@ -15,3 +15,128 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  color: white;
+  font-size: 20px;
+  margin-top: 3px;
+}
+
+body {
+  background-color:#fff;
+  color:#333;
+  font-family:verdana, arial, helvetica, sans-serif;
+  font-size:13px;
+  line-height:18px;
+  margin:33px
+}
+
+.container {
+  width: 1170px;
+}
+
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.top-message{
+  margin: 34px;
+  margin-left: 25%;
+}
+
+.col-xs-3{
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
+
+p{
+  font-family:verdana, arial, helvetica, sans-serif;
+  font-size:13px;
+  line-height:18px;
+}
+
+ol,ul,td {
+  font-family:verdana, arial, helvetica, sans-serif;
+  font-size:13px;
+  line-height:18px;
+  margin:33px;
+}
+
+.newbook{
+  font-size: 30px;
+  margin-top: 70px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+a{
+  color: grey;
+}
+
+a:visited{
+　color:#666666
+}
+
+a:hover{
+　color:#ffffff;
+　background-color:#000000
+}
+
+th{
+　padding-bottom:5px
+}
+
+td{
+　padding-bottom:7px;
+　padding-left:5px;
+　padding-right:5px
+}
+
+h1 {
+
+}
+
+h2{
+  font-size: 30px;
+}
+
+h2{
+  margin-top: 51px;
+  margin-bottom: 10px;
+}
+
+.field {
+  margin-bottom: 10px;
+}
+
+.indextitle{
+  margin-bottom: 10px;
+}
+
+footer{
+  float: right;
+  margin-right: 180px;
+}
+
+.actions{
+  margin-left: 2px;
+  margin-bottom: 10px;
+  width: 285px;
+}
+
+.heading{
+  margin-bottom: 3px;
+}
+
+.useredit {
+  margin-left: 20px;
+  margin-top: 30px;
+}

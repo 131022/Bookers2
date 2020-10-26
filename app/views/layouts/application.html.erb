@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bookers2</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -13,16 +14,17 @@
     <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
         <nav class='nav navbar-nav navbar-left' >
-          <span>Bookers</span>
+          <div class="title">Bookers</div>
         </nav>
         <nav>
         <ul class="nav navbar-nav navbar-right">
-          <li><a class="glyphicon glyphicon-home home" href="/"> Home</a></li>
             <% if user_signed_in? %>
-              <li><a class="glyphicon glyphicon-link about" href="/users"> Users</a></li>
-              <li><a class="glyphicon glyphicon-link about" href="/books"> Books</a></li>
+              <li><a class="glyphicon glyphicon-home home" <%= link_to " Home", user_path(current_user) %></a></li>
+              <li><a class="glyphicon glyphicon-user user" href="/users"> Users</a></li>
+              <li><a class="glyphicon glyphicon-book books" href="/books"> Books</a></li>
               <li><a class="glyphicon glyphicon-log-out logout" rel="nofollow" data-method="delete" href="/users/sign_out"> logout</a></li>
             <% else %>
+              <li><a class="glyphicon glyphicon-home home" href="/"> Home</a></li>
               <li><a class="glyphicon glyphicon-link about" href="/home/about"> About</a></li>
               <li><a class="glyphicon glyphicon-edit sign_up" href="/users/sign_up"> sign up</a></li>
               <li><a class="glyphicon glyphicon-log-in sign_in" href="/users/sign_in"> login</a></li>
@@ -31,11 +33,22 @@
         </nav>
       </div>
     </header>
+
     <div class="container">
       <div class="row">
-        <br><br><br>
+
+        <% if flash[:notice] %>
+  　　      <p><%= flash[:notice] %></p>
+　　    <% end %>
+
         <%= yield %>
+
       </div>
     </div>
+
   </body>
+  <footer>
+    <p>CopyRight Infratop.inc</p>
+  </footer>
+
 </html>
